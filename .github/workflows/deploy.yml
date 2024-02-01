@@ -1,0 +1,30 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # ビルドをトリガーするブランチ
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14" # プロジェクトに合わせたNode.jsのバージョン
+
+      - name: Build and Export
+        run: |
+          npm install
+          npm run build
+          npm run export  # Next.jsの場合、`next export`を使用
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # デプロイ先のブランチ
+          FOLDER: out # Next.jsのビルド出力ディレクトリ
