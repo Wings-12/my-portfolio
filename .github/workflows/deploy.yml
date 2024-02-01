@@ -27,4 +27,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # デプロイ先のブランチ
-          FOLDER: out # Next.jsのビルド出力ディレクトリ
+          FOLDER: standalone # Next.jsのビルド出力ディレクトリ
