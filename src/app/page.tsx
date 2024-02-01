@@ -10,7 +10,9 @@ export default function Home() {
       {/* About Site Section */}
       <div id="about-website" className="section">
         {/* Content for the "About this Site" section */}
-        about this website
+        <h1>
+          <strong>about this website</strong>
+        </h1>
       </div>
 
       {/* About Me Section */}
