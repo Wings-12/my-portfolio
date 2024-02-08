@@ -1,0 +1,16 @@
+/* components/CharacterContainer.module.css に追加 */
+.character_container {
+  position: relative;
+}
+
+.character_image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.floating_button {
+  position: absolute;
+  left: 350px;
+  bottom: 330px;
+}
